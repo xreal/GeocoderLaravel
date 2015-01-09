@@ -49,7 +49,7 @@ class GeocoderServiceProvider extends ServiceProvider
         $this->app->singleton('geocoder.adapter', function($app) {
             $adapter = $app['config']->get('geocoder-laravel::adapter');
 
-            return new $adapter;
+            return new $adapter(2,2);
         });
 
         $this->app->singleton('geocoder.chain', function($app) {
