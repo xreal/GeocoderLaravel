@@ -46,6 +46,8 @@ class GeocoderServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->prepareResources();
+
         $this->app->singleton('geocoder.adapter', function($app) {
             $adapter = $app['config']->get('geocoder.adapter');
 
