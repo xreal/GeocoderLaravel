@@ -90,8 +90,8 @@ class GeocoderServiceProvider extends ServiceProvider
      */
     protected function prepareResources()
     {
-        $configPath = __DIR__ . '/../config/config.php';
-        $this->mergeConfigFrom('geocoder', $configPath);
+        $configPath = __DIR__ . '/../../config/config.php';
+        $this->mergeConfigFrom($configPath, 'geocoder');
         $this->publishes([
             $configPath => config_path('geocoder.php'),
         ]);
